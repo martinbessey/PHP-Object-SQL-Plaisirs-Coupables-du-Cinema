@@ -8,6 +8,7 @@ img{
 }
 
 body {
+    width:100vw;
     margin: 0;
     background-color: #fafafa;
     font-family:Arial, Helvetica, sans-serif ;
@@ -43,8 +44,7 @@ div p{
 
 main{
     position: relative;
-    Width:100vw;
-    height:120vh;    
+    Width:100vw; 
     justify-content: center; 
     background-position:top;
     background-repeat: no-repeat;
@@ -52,6 +52,7 @@ main{
 
 .background{
     position: absolute;
+    opacity:0.8;
     width: 100vh;
     transform: translateX(-50%);
 }
@@ -61,7 +62,6 @@ article{
     border: 2px solid #959595;
     border-radius: 3vw;
     width:30vw;
-    height: 105vh;
     padding:2%;
     margin: 1%;
     text-align: justify;
@@ -70,14 +70,34 @@ article{
 figure{
     width:15vw;
     height: 20vh;
-    margin-bottom: 40%;
+    margin-bottom: 30vh;
     transform: translateX(15%);
+}
+
+.btn{
+    position: relative;
+    width: 100%;
+    margin-top: 5vh;
+    padding: 1.8vh;
+    height:8vh; 
+    color:#fafafa;
+    background-color:fuchsia;
+    font-size: 24px;
+    text-decoration: none;
+    text-align: center;
+    border-radius:5vh;
+}
+
+.btn:hover{
+    background-color:#fafafa;
+    color: fuchsia;   
+    border: 2px solid fuchsia;
 }
 
 footer{
     width:100vw;
     height:5vh;
-    background-color: fuchsia;
+    background-color: rgb(0, 0, 0);
     color: #fafafa;
     text-align: center;
 }

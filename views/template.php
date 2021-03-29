@@ -8,10 +8,9 @@
     <title><?= $titre ?></title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
     <header class="flex wrap">
-        <a href="" class="logo">
+        <a href="/views/accueil/accueil.php" class="logo">
             <img src="../IMG/Sans titre-1.png" alt="plaisirs coupables du cinéma">
         </a>
         <input type="search" placeholder=" Rechercher...">

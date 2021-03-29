@@ -9,11 +9,11 @@ class FilmController{
 
         $dao = new DAO;
 
-        $sql = "SELECT idfilm,titre,DATE_FORMAT(SEC_TO_TIME(duree*60), '%H:%i') AS duree, f.annee ,f.idreal,r.nom
+        $sql = "SELECT idfilm,titre,DATE_FORMAT(SEC_TO_TIME(duree*60), '%H:%i') AS duree, f.annee , f.indice, f.idreal,r.nom
                 FROM film f
                 INNER JOIN realisateur r
                 ON r.idreal = f.idreal
-                ORDER BY f.titre DESC";
+                ORDER BY f.titre ASC";
 
                 $films = $dao->executerRequete($sql);
 
@@ -31,5 +31,18 @@ class FilmController{
         $film = $dao->executerRequete($sql, [":id"=> $id]);
 
         require "views/film/detailFilm.php";
+    }
+
+    public function findCasting($id){
+        $id = $id;
+        $dao = new DAO;
+
+        $sql ="SELECT CONCAT(a.prenom,'', a.nom) AS identite, a.sexe 
+               FROM caster c, acteur a
+               WHERE c.idacteur = a.idacteur
+               AND c.idfilm = :id";
+        $casting =$dao->executerRequete($sql, [":id"=> $id]);
+
+        require "views/film/casting.php";
     }
 }

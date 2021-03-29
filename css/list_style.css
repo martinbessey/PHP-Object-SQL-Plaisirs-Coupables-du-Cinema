@@ -7,6 +7,8 @@ img{
 }
 
 body {
+    width:100vw;
+    height: 150vh;
     margin: 0;
     background-color: #fafafa;
     font-family:Arial, Helvetica, sans-serif ;
@@ -23,7 +25,7 @@ body {
 div{
     flex-direction: column;
     text-align: center;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
     width:100vw;
     height: 10vh;
 }
@@ -42,7 +44,7 @@ div p{
 
 main{
     position: relative;
-    Width:100vw;
+    width:100vw;
     height:120vh;    
     justify-content: center; 
     background-position:top;
@@ -54,17 +56,25 @@ main{
     width: 100vh;
     transform: translateX(-50%);
 }
+
 table{
     position: absolute;
     background-color:rgba(255,255,255,0.9);
     border: 2px solid #959595;
+    width: 55vw;
     border-radius: 3vw;
-    width:35vw;
-    height: 105vh;
     padding:2%;
-    margin: 1%;
-    transform: translateX(90%);
+    margin: 0;
+    transform: translateX(23vw);
     text-align: justify;
+}   
+
+thead{
+    line-height: 3em;
+}
+
+tbody{
+    line-height: 1.5em;
 }
 
 figure{
@@ -90,7 +100,7 @@ footer{
     z-index: 200;
     width:100vw;
     height:5vh;
-    background-color: fuchsia;
+    background-color: rgb(0, 0, 0);
     color: #fafafa;
     text-align: center;
 }

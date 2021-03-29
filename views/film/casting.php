@@ -16,7 +16,7 @@ ob_start();
 
 <body>
     <div class="flex">
-        <h2><?= $films->rowCount(); ?> films enregistrés</h2>
+        <h2>Casting du film:</h2>
     </div>
     <main>
         <table>
@@ -30,18 +30,16 @@ ob_start();
             </thead>
             <tbody>
                 <?php
-                while ($film = $films->fetch()) {
-                    echo "<tr><td><a href='index.php?action=detailFilm&id=" . $film['idfilm'] . "'>" . $film['titre'] . "</a></td>";
-                    echo "<td>" . $film['annee'] . "</td>";
-                    echo "<td><a href='index.php?action=detailRealisateur&id=" . $film['idreal'] . "'>" . $film['nom'] . "</a></td>";
-                    echo "<td>" . $film['indice'] . "</td></tr>";
+                while ($casting = $castings->fetch()) {
+                    echo "<tr><td><a href='index.php?action=casting&id=" . $casting['idacteur'] . "'>" . $casting['identite'] . "</a></td>";
+                    echo "<td>" . $film['sexe'] . "</td>";
                 }
                 ?>
             </tbody>
         </table>
     </main>
     <footer>
-        <small>Made by Martin Bessey © All rights reserved 2021</small>
+    <small>Made by Martin Bessey © All rights reserved 2021</small>
     </footer>
 </body>
 </html>
@@ -49,6 +47,6 @@ ob_start();
 <?php
 
 $films->closeCursor();
-$titre = "La liste de films";
+$titre = "Casting";
 $contenu = ob_get_clean();
 require "views/template.php";

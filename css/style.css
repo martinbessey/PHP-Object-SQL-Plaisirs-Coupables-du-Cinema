@@ -6,6 +6,8 @@ img{
     width:100%;
 }
 body {
+    width:100vw;
+    height: 150vh;
     margin: 0;
     background-color: #fafafa;
     font-family:Arial, Helvetica, sans-serif ;
@@ -100,7 +102,7 @@ main{
 
 #banner span,
 #banner p,
-#banner a,
+.btn,
 #banner i
 {
     position: absolute;
@@ -115,7 +117,7 @@ main{
     margin-bottom: 5vw;
 }
 
-#banner a{
+.btn{
     margin-top: 20vh;
     width:10vw;
     height:10vh; 
@@ -129,25 +131,25 @@ main{
     border-radius:5vh;
 }
 
-#banner a:hover{
+.btn:hover{
     background-color:#fafafa;
-    color: fuchsia;
-    
+    color: fuchsia;   
 }
 
 #banner i{
     color:white;
-
 }
 
 
-.banner2 img{
+.banner img{
     transform:  translate(-10px, 50px)!important;
 }
+
 hr
 {
     width: 80vw;
 }
+
 section{
     width: 80vw;
     height: 30vh;
@@ -160,7 +162,7 @@ footer{
     z-index: 200;
     width:100vw;
     height:5vh;
-    background-color: fuchsia;
+    background-color: rgb(0, 0, 0);
     color: #fafafa;
     text-align: center;
 }

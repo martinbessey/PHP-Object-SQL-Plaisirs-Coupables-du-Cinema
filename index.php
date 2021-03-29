@@ -5,7 +5,6 @@ require_once "controllers/AccueilController.php";
 require_once "controllers/RealController.php";
 
 
-// $ctrlFilm = new FilmController();
 $ctrlAccueil = new AccueilController;
 $ctrlFilm = new FilmController;
 $ctrlReal = new RealController;
@@ -18,10 +17,11 @@ if(isset($_GET['action'])){
    
 
 switch($_GET['action']){
-        case "listFilms" : $ctrlFilm->findAll(); break;
+        case "listFilms" : $ctrlFilm->findAll();break;
         case "detailRealisateur" : $ctrlReal->findOneById($id); break;
         case  "detailFilm" : $ctrlFilm->findOneById($id);break;
-        
+        case "filmographieReal": $ctrlReal->findAllById($id);break;    
+        case "casrting": $ctrlFilm->findCasting($id);break;
 }
 }else{
     $ctrlAccueil->pageAccueil();
