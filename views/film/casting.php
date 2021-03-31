@@ -16,23 +16,23 @@ ob_start();
 
 <body>
     <div class="flex">
-        <h2>Casting du film:</h2>
+    <h2><?= $castings->rowCount(); ?> acteurs enregistrés</h2>
     </div>
     <main>
         <table>
             <thead>
                 <tr>
-                    <th>Titre</th>
-                    <th>Année</th>
-                    <th>Réalisateur</th>
-                    <th>Indice de culpabilité</th>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Sexe</th>
+                    <th>Date de naissance</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 while ($casting = $castings->fetch()) {
                     echo "<tr><td><a href='index.php?action=casting&id=" . $casting['idacteur'] . "'>" . $casting['identite'] . "</a></td>";
-                    echo "<td>" . $film['sexe'] . "</td>";
+                    echo "<td>" . $casting['sexe'] . "</td>";
                 }
                 ?>
             </tbody>

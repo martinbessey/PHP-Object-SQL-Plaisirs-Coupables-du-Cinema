@@ -28,5 +28,30 @@ class RealController{
         
         require "views/realisateur/filmographie.php";
     }
+    public function addRealForm(){
+        require "views/realisateur/addRealForm.php";
+    }
+    public function addReal($array){
+
+        $dao = new DAO();
+
+        $sql = "INSERT INTO realisateur(nom, prenom, sexe)
+                VALUES (:nom, :prenom, :sexe)";
+
+                $nom_realisateur = filter_var($array['nom_real'],FILTER_SANITIZE_STRING);
+                $prenom_realisateur = filter_var($array['prenom_real'],FILTER_SANITIZE_STRING);
+                $sexe_realisateur = filter_var($array['sexe_real'],FILTER_SANITIZE_STRING);
+                $ajout = $dao->executerRequete($sql, [":nom" =>$nom_realisateur, ":prenom"=> $prenom_realisateur, ":sexe"=> $sexe_realisateur]);
+
+                require "views/realisateur/addReal.php";
+       }
+       public function  editRealForm($id){
+
+
+
+           $realisateur = 
+           require "views/realisateur/editReal.php";
+       }
+
     
 }

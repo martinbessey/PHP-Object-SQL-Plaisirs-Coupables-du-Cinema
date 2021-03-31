@@ -36,6 +36,7 @@ $detailReal = $realisateur->fetch();
         </span>
         <a href="index.php?action=filmographieReal" class="btn">Filmographie</a>
     </article>
+    <span>Vous souhaitez ajouter un réalisateur?<a href="index.php?action=ajouterReal"><strong>Cliquez ici</strong></a></span>
     <footer>
         <small>Made by Martin Bessey © All rights reserved 2021</small>
     </footer>

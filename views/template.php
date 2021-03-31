@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="flex wrap">
-        <a href="/views/accueil/accueil.php" class="logo">
+        <a href="./index.php" class="logo">
             <img src="../IMG/Sans titre-1.png" alt="plaisirs coupables du cinéma">
         </a>
         <input type="search" placeholder=" Rechercher...">

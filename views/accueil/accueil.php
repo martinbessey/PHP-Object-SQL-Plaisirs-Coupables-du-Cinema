@@ -32,6 +32,6 @@ ob_start();
 
 $titre = "Page d'accueil de notre site";
 $contenu = ob_get_clean();
-require "views/template.php";
+require "./views/template.php";
 
 

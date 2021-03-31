@@ -41,7 +41,7 @@ class FilmController{
                FROM caster c, acteur a
                WHERE c.idacteur = a.idacteur
                AND c.idfilm = :id";
-        $casting =$dao->executerRequete($sql, [":id"=> $id]);
+        $castings =$dao->executerRequete($sql, [":id"=> $id]);
 
         require "views/film/casting.php";
     }
