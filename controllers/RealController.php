@@ -14,19 +14,14 @@ class RealController{
                 WHERE r.idreal= :id";
                 $realisateur = $dao->executerRequete($sql, [":id"=> $id]);
 
-        require "views/realisateur/detailReal.php";
-    }
-    public function findAllById($id){
-        
-        $dao = new DAO;
 
-        $sql = "SELECT r.idreal, f.titre, f.annee, CONCAT(r.prenom,' ',r.nom) AS identite
+        $sql2 = "SELECT f.titre, f.annee, f.idfilm
                 FROM film f INNER JOIN realisateur r
                 ON f.idreal=r.idreal
-                ORDER BY f.annee DESC";
-                $realisateurs = $dao->executerRequete($sql, [":id"=> $id]);
+                 AND r.idreal = :id";
+                $filmographies = $dao->executerRequete($sql2, [":id"=> $id]);
         
-        require "views/realisateur/filmographie.php";
+        require "views/realisateur/detailReal.php";
     }
     public function addRealForm(){
         require "views/realisateur/addRealForm.php";
@@ -43,7 +38,7 @@ class RealController{
                 $sexe_realisateur = filter_var($array['sexe_real'],FILTER_SANITIZE_STRING);
                 $ajout = $dao->executerRequete($sql, [":nom" =>$nom_realisateur, ":prenom"=> $prenom_realisateur, ":sexe"=> $sexe_realisateur]);
 
-                require "views/realisateur/addReal.php";
+                require "views/realisateur/addRealForm.php";
        }
        public function  editRealForm($id){
 

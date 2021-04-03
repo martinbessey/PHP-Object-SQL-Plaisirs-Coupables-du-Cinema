@@ -13,7 +13,7 @@ class FilmController{
                 FROM film f
                 INNER JOIN realisateur r
                 ON r.idreal = f.idreal
-                ORDER BY f.titre ASC";
+                ORDER BY f.indice DESC";
 
                 $films = $dao->executerRequete($sql);
 
@@ -30,19 +30,20 @@ class FilmController{
                 WHERE f.idfilm = :id";
         $film = $dao->executerRequete($sql, [":id"=> $id]);
 
+       
+    
+
+        $sql2 ="SELECT CONCAT(a.prenom,' ',a.nom)AS identite, r.personnage, a.idacteur, r.idrole, f.titre
+        FROM film f INNER JOIN caster c 
+        ON c.idfilm = f.idfilm
+        INNER JOIN rôle r 
+        ON r.idrole = c.idrole
+        INNER JOIN acteur a 
+        ON c.idacteur = a.idacteur
+        WHERE f.idfilm = :id";
+
+        $castings = $dao->executerRequete($sql2, [":id"=> $id]);
+ 
         require "views/film/detailFilm.php";
-    }
-
-    public function findCasting($id){
-        $id = $id;
-        $dao = new DAO;
-
-        $sql ="SELECT CONCAT(a.prenom,'', a.nom) AS identite, a.sexe 
-               FROM caster c, acteur a
-               WHERE c.idacteur = a.idacteur
-               AND c.idfilm = :id";
-        $castings =$dao->executerRequete($sql, [":id"=> $id]);
-
-        require "views/film/casting.php";
     }
 }

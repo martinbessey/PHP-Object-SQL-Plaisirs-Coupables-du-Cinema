@@ -1,6 +1,7 @@
 <?php
 
 ob_start();
+$filmDefilmGenres = $filmDeGenres->fetch();
 
 ?>
 
@@ -11,7 +12,7 @@ ob_start();
 </head>
 <body>
     <div class="flex">
-        <h2><?= $films->rowCount(); ?> films enregistrés</h2>
+        <h2><?= $filmDefilmGenres['nom']; ?></h2>
     </div>
     <main>
         <table>
@@ -19,17 +20,15 @@ ob_start();
                 <tr>
                     <th>Titre</th>
                     <th>Année</th>
-                    <th>Réalisateur</th>
                     <th>Indice de culpabilité</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                while ($film = $films->fetch()) {
-                    echo "<tr><td><a href='index.php?action=detailFilm&id=" . $film['idfilm'] . "'>" . $film['titre'] . "</a></td>";
-                    echo "<td>" . $film['annee'] . "</td>";
-                    echo "<td><a href='index.php?action=detailRealisateur&id=" . $film['idreal'] . "'>" . $film['nom'] . "</a></td>";
-                    echo "<td>" . $film['indice'] . "</td></tr>";
+                while ($filmDeGenre = $filmDeGenres->fetch()) {
+                    echo "<tr><td><a href='index.php?action=detailFilm&id=" . $filmDeGenre ['idfilm'] . "'>" . $filmDeGenre['titre'] . "</a></td>";
+                    echo "<td>" . $filmDeGenre['annee'] . "</td>";
+                    echo "<td>" . $filmDeGenre['indice'] . "</td></tr>";
                 }
                 ?>
             </tbody>
@@ -38,6 +37,6 @@ ob_start();
 
 <?php
 
-$films->closeCursor();
+$filmDeGenres->closeCursor();
 $contenu = ob_get_clean();
 require "views/template.php";

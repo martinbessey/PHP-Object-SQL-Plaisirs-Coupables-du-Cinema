@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,7 @@
     <title><?= $titre ?></title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header class="flex wrap">
         <a href="./index.php" class="logo">
@@ -16,14 +17,17 @@
         <input type="search" placeholder=" Rechercher...">
         <nav class="flex">
             <a href="index.php?action=listFilms">Films</a>
-            <a href="">Acteurs</a>
-            <a href="">Genres</a>
+            <a href="index.php?action=listActeurs">Acteurs</a>
+            <a href="index.php?action=listGenres">Genres</a>
         </nav>
     </header>
-        <hr>
-        <div class="content">
-            <?= $contenu ?>
-        </div>
+    <hr>
+    <div class="content">
+        <?= $contenu?>
+    </div>
+    <!--<footer>
+        <small>Made by Martin Bessey © All rights reserved 2021</small>
+    </footer>-->
 </body>
 
 </html>

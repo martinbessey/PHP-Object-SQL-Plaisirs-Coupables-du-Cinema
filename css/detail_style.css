@@ -7,12 +7,6 @@ img{
     width:100%;
 }
 
-body {
-    width:100vw;
-    margin: 0;
-    background-color: #fafafa;
-    font-family:Arial, Helvetica, sans-serif ;
-}
   
 .flex {
     display: flex;
@@ -43,28 +37,34 @@ div p{
 }
 
 main{
-    position: relative;
-    Width:100vw; 
+    width:100vw; 
     justify-content: center; 
     background-position:top;
     background-repeat: no-repeat;
 }
 
 .background{
-    position: absolute;
     opacity:0.8;
     width: 100vh;
     transform: translateX(-50%);
 }
 article{
-    position: absolute;
     background-color:rgba(255,255,255,0.9);
     border: 2px solid #959595;
     border-radius: 3vw;
-    width:30vw;
+    width:35vw;
     padding:2%;
     margin: 1%;
     text-align: justify;
+}
+
+span{
+   width:100%;
+}
+article p{
+    margin-top: 2vh;
+    font-size: 16px;
+    margin-bottom:4vh;
 }
 
 figure{
@@ -74,30 +74,8 @@ figure{
     transform: translateX(15%);
 }
 
-.btn{
-    position: relative;
-    width: 100%;
-    margin-top: 5vh;
-    padding: 1.8vh;
-    height:8vh; 
-    color:#fafafa;
-    background-color:fuchsia;
-    font-size: 24px;
-    text-decoration: none;
-    text-align: center;
-    border-radius:5vh;
-}
-
-.btn:hover{
-    background-color:#fafafa;
-    color: fuchsia;   
-    border: 2px solid fuchsia;
-}
-
-footer{
-    width:100vw;
-    height:5vh;
-    background-color: rgb(0, 0, 0);
-    color: #fafafa;
-    text-align: center;
+ul a{
+    text-decoration:none;
+    font-weight: 900;
+    color:fuchsia;
 }
