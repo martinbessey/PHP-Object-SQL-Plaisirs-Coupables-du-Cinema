@@ -43,13 +43,18 @@ class RealController{
 
                 require "views/realisateur/addReal.php";
        }
-       public function  editRealForm($id){
 
+    public function  editRealForm($id){
 
-
-           $realisateur = 
+           $realisateur = $this->findOneById($id, true);
            require "views/realisateur/editReal.php";
-       }
+    }
+
+    public function editReal( $id, $array){
+
+        header("Location: index.php?action=detailReal");
+    }
 
     
 }
+    

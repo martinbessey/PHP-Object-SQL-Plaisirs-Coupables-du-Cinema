@@ -20,6 +20,7 @@ if(isset($_GET['action'])){
    
 
 switch($_GET['action']){
+    
         case "listFilms" : $ctrlFilm->findAll();break;
         case "listActeurs" : $ctrlAct->findAll();break;
         case "listGenres" : $ctrlGenre->findAll();break;
@@ -30,7 +31,10 @@ switch($_GET['action']){
         case "ajouterRealForm": $ctrlReal->addRealForm();break;
         case "ajouterReal": $ctrlReal->addReal($_POST);break; 
         case "ajouterActeurForm" : $ctrlAct->addActorForm();break;  
-        case "editReal": $ctrlReal->editRealForm($id);break;      
+        case "editRealForm": $ctrlReal->editRealForm($id);break;  
+        case "editActeurForm": $ctrlAct->editActorForm($id);break;
+        case "editActeur" : $ctrlAct->editActeur($id, $array);break;
+        case "editReal" : $ctrlReal->editReal($id, $array);break;
 }
 }else{
     $ctrlAccueil->pageAccueil();

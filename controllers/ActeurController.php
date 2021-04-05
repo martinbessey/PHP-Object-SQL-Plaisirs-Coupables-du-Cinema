@@ -52,7 +52,7 @@ class ActeurController
         require "views/acteur/addActorForm.php";
     }
 
-    public function addReal($array){
+    public function addActor($array){
 
         $dao = new DAO();
 
@@ -65,8 +65,18 @@ class ActeurController
 
                 $ajout = $dao->executerRequete($sql, [":nom" =>$nom_realisateur, ":prenom"=> $prenom_realisateur, ":sexe"=> $sexe_realisateur]);
 
-                require "views/realisateur/addActeur.php";
-       }
+                require "views/acteur/addActeur.php";   
+    } 
 
+    public function  editActorForm($id){
+
+        $acteurs = $this->findOneById($id, true);
+        require "views/acteur/editActor.php";
+    }
+
+    public function editActeur( $id, $array){
+
+        header("Location: index.php?action=detailActor");
+    }
 
 }

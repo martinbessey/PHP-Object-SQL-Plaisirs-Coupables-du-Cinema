@@ -9,7 +9,7 @@ ob_start();
 
 
 <div class="content">
-   <form action="./index.php?action=ajouterReal" method="post">
+   <form action="./index.php?action=editReal" method="post">
       <div>
          <label form="nom realisateur">Nom du realisateur:</label>
          <input type="text" id="nom_real" name="nom_real" placeholder="Durand" required>
@@ -23,6 +23,7 @@ ob_start();
          <input type="text" id="sexe_real" name="sexe_real" placeholder="M" required>
       </div>
       <div>
+         <input type="hidden" value="<?= $_SESSION["token"] ?>" name="token">
          <button type="submit">Modifier</button>
       </div>
 
@@ -32,6 +33,6 @@ ob_start();
 </div>
 
 <?php
-$titre = "Ajouter un realisateur";
+
 $contenu = ob_get_clean();
 require "views/template.php";

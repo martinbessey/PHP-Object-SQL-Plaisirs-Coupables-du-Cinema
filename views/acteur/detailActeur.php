@@ -37,7 +37,8 @@ $detailAct = $acteurs->fetch();
             ?>
         </ul>
     </article>
-    <span>Vous souhaitez ajouter un acteur?<a href="index.php?action=ajouterActeurForm"><strong>Cliquez ici</strong></a></span>
+    <span><a href="index.php?action=editActeurForm"><strong>Modifier </strong></a>cet acteur</span>
+    <span><a href="index.php?action=ajouterActeurForm"><strong>Ajouter </strong></a>un acteur</span>
     </body>
 
     </html>

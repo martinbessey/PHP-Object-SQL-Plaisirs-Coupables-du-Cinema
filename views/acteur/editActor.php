@@ -11,8 +11,8 @@ ob_start();
 </head>
 
 <section class="flex">
-   <h2> Ajouter un acteur</h2>
-   <form class="flex" action="./index.php?action=ajouterActeur" method="post">
+   <h2> Modifier les infos d'un acteur</h2>
+   <form class="flex" action="./index.php?action=editActeur" method="post">
       <div>
          <input type="text" id="nom_act" name="nom_act" placeholder="Nom de l'acteur..." required>
       </div>
@@ -24,11 +24,11 @@ ob_start();
       </div>
       <div>
          <input type="hidden" value="<?= $_SESSION["token"] ?>" name="token">
-         <input type="submit" placeholder="Ajouter" value="Ajouter">
+         <input type="submit" placeholder="Modifier" value="Modifier">
       </div>
    </form>
 </section>
+
 <?php
-$titre = "Ajouter un acteur";
 $contenu = ob_get_clean();
 require "views/template.php";
