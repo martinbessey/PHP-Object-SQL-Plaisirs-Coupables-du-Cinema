@@ -9,7 +9,7 @@ ob_start();
 
 
 <div class="content">
-   <form action="./index.php?action=ajouterReal" method="post">
+   <form action="./index.php?action=ajouterActeur" method="post">
       <div>
          <label form="nom acteur">Nom de l'Acteur:</label>
          <input type="text" id="nom_act" name="nom_act" placeholder="Durand" required>

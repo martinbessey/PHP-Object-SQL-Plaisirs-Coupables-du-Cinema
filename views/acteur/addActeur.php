@@ -9,6 +9,5 @@ ob_start();
 
 <?php
 
-$titre ="Acteur ajouté";
 $contenu= ob_get_clean();
 require "./views/template.php";

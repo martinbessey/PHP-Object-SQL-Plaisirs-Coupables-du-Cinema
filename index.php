@@ -28,7 +28,8 @@ switch($_GET['action']){
         case "detailActeur" : $ctrlAct->findOneById($id);break;
         case "detailGenre" : $ctrlGenre->findOneById($id);break;
         case "ajouterRealForm": $ctrlReal->addRealForm();break;
-        case "ajouterReal": $ctrlReal->addReal($_POST);break;   
+        case "ajouterReal": $ctrlReal->addReal($_POST);break; 
+        case "ajouterActeurForm" : $ctrlAct->addActorForm();break;  
         case "editReal": $ctrlReal->editRealForm($id);break;      
 }
 }else{

@@ -36,7 +36,7 @@ $detailReal = $realisateur->fetch();
             ?>
         </ul>
     </article>
-    <span>Vous souhaitez ajouter un réalisateur?<a href="index.php?action=ajouterReal"><strong>Cliquez ici</strong></a></span>
+    <span>Vous souhaitez ajouter un réalisateur?<a href="index.php?action=ajouterRealForm"><strong>Cliquez ici</strong></a></span>
 
 
     <?php

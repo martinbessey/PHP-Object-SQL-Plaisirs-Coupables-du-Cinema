@@ -6,6 +6,7 @@ $detailAct = $acteurs->fetch();
 
 
 ?>
+
 <head>
     <link rel="stylesheet" href="/css//detail_style.css">
     <title>"Plaisirs coupables du cinéma"</title>
@@ -26,7 +27,8 @@ $detailAct = $acteurs->fetch();
         <br>
         <span>
             <strong>Bio:<br></strong><?= $detailAct['bio'] ?>
-        </span><h4>Filmographie coupable:</h4>
+        </span>
+        <h4>Filmographie coupable:</h4>
         <ul>
             <?php
             while ($filmographie = $filmographies->fetch()) {
@@ -35,9 +37,10 @@ $detailAct = $acteurs->fetch();
             ?>
         </ul>
     </article>
-    <span>Vous souhaitez ajouter un acteur?<a href="index.php?action=ajouterReal"><strong>Cliquez ici</strong></a></span>
-</body>
-</html>    
+    <span>Vous souhaitez ajouter un acteur?<a href="index.php?action=ajouterActeurForm"><strong>Cliquez ici</strong></a></span>
+    </body>
+
+    </html>
 
     <?php
 
