@@ -20,15 +20,15 @@ class ActeurController
         require "views/acteur/listActeurs.php";
     }
 
-    public function findOneById($id)
+    public function findOneById($id, $edit = false)
     {
         $id = $id;
         $dao = new DAO;
 
-        $sql = "SELECT idacteur, CONCAT(prenom,' ',nom) AS identite, img , naissance, bio
+        $sql = "SELECT idacteur, CONCAT(prenom,' ',nom) AS identite, img , naissance, bio, nom, prenom
         FROM acteur 
         WHERE idacteur= :id";
-        $acteurs = $dao->executerRequete($sql, [":id" => $id]);
+        $acteur = $dao->executerRequete($sql, [":id" => $id]);
 
 
 
@@ -43,8 +43,18 @@ class ActeurController
         ORDER BY f.annee DESC";
 
         $filmographies = $dao->executerRequete($sql2, [":id" => $id]);
+        
 
-        require "views/acteur/DetailActeur.php";
+        if(!$edit){
+
+        require "views/acteur/DetailActeur.php";    
+
+        }else{
+
+            return $acteur;
+
+        }
+        
     }
 
     public function addActorForm()
@@ -70,11 +80,11 @@ class ActeurController
 
     public function  editActorForm($id){
 
-        $acteurs = $this->findOneById($id, true);
-        require "views/acteur/editActor.php";
+        $acteur = $this->findOneById($id, true);
+        require "views/acteur/editActorForm.php";
     }
 
-    public function editActeur( $id, $array){
+    public function editActeur($id, $array){
 
         header("Location: index.php?action=detailActor");
     }

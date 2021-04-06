@@ -37,11 +37,12 @@ input[type="text"]{
     height:10vh;
     font-size: 24px;
     margin:3%;
+    color:rgb(14, 14, 14);
 }
 
 input[type="text"]:hover {
-    border: solid 2px fuchsia;
-  }
+    border: solid 4px fuchsia;
+}
 
 input[type="submit"]{
     background-color:rgb(14, 14, 14);
@@ -57,4 +58,6 @@ input[type="submit"]:hover {
     color: white;;
   }
 
-
+input:focus{
+    outline: none;
+}

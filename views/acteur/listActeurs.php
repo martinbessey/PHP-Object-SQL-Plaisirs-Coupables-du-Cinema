@@ -29,7 +29,7 @@ ob_start();
         </tbody>
     </table>
 </main>
-
+<span>Vous souhaitez ajouter un nouvel acteur?<a href="index.php?action=ajouterRealForm"><strong>Cliquez ici</strong></a></span>
 <?php
 
 $acteurs->closeCursor();

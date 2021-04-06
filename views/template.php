@@ -16,8 +16,9 @@
         <input type="search" placeholder=" Rechercher...">
         <nav class="flex">
             <a href="index.php?action=listFilms">Films</a>
-            <a href="index.php?action=listActeurs">Acteurs</a>
             <a href="index.php?action=listGenres">Genres</a>
+            <a href="index.php?action=listActeurs">Acteurs</a>
+            <a href="index.php?action=listReal">Réalisateurs</a>
         </nav>
     </header>
     <hr>

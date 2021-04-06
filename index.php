@@ -23,6 +23,7 @@ switch($_GET['action']){
     
         case "listFilms" : $ctrlFilm->findAll();break;
         case "listActeurs" : $ctrlAct->findAll();break;
+        case "listReal" : $ctrlReal->findAll();break;
         case "listGenres" : $ctrlGenre->findAll();break;
         case "detailRealisateur" : $ctrlReal->findOneById($id); break;
         case "detailFilm" : $ctrlFilm->findOneById($id);break;
@@ -30,12 +31,15 @@ switch($_GET['action']){
         case "detailGenre" : $ctrlGenre->findOneById($id);break;
         case "ajouterRealForm": $ctrlReal->addRealForm();break;
         case "ajouterReal": $ctrlReal->addReal($_POST);break; 
-        case "ajouterActeurForm" : $ctrlAct->addActorForm();break;  
-        case "editRealForm": $ctrlReal->editRealForm($id);break;  
+        case "ajouterActeurForm" : $ctrlAct->addActorForm();break;
+        case "ajouterActeur": $ctrlAct->addActor($_POST);break; 
+        case "editRealForm": $ctrlReal->editRealForm($id);break;
+        case "editReal" : $ctrlReal->editReal($id, $_POST);break;  
         case "editActeurForm": $ctrlAct->editActorForm($id);break;
-        case "editActeur" : $ctrlAct->editActeur($id, $array);break;
-        case "editReal" : $ctrlReal->editReal($id, $array);break;
+        case "editActeur" : $ctrlAct->editActeur($id, $_POST);break;
+
 }
+
 }else{
     $ctrlAccueil->pageAccueil();
 }

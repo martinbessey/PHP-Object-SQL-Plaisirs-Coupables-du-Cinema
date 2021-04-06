@@ -1,8 +1,7 @@
 <?php
 
 ob_start();
-$detailAct = $acteurs->fetch();
-
+$detailAct = $acteur->fetch();
 
 
 ?>
@@ -38,13 +37,12 @@ $detailAct = $acteurs->fetch();
         </ul>
     </article>
     <span><a href="index.php?action=editActeurForm"><strong>Modifier </strong></a>cet acteur</span>
-    <span><a href="index.php?action=ajouterActeurForm"><strong>Ajouter </strong></a>un acteur</span>
     </body>
 
     </html>
 
     <?php
 
-    $acteurs->closeCursor();
+    $acteur->closeCursor();
     $contenu = ob_get_clean();
     require "views/template.php";

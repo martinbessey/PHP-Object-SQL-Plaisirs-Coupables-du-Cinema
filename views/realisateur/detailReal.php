@@ -36,8 +36,7 @@ $detailReal = $realisateur->fetch();
             ?>
         </ul>
     </article>
-    <span><a href="index.php?action=editRealForm"><strong>Modifier </strong></a>ce réalisateur</span>
-    <span><a href="index.php?action=ajouterRealForm"><strong>Ajouter </strong></a>un réalisateur</span>
+    <span><a href="index.php?action=editRealForm&id="<?=$detailReal['idreal']?>><strong>Modifier </strong></a>ce réalisateur</span>
 
 
     <?php
