@@ -46,4 +46,26 @@ class FilmController{
  
         require "views/film/detailFilm.php";
     }
+    public function addFilmForm(){
+        require "views/film/addFilmForm.php";
+    }
+    
+    public function addFilm($array){
+
+        $dao = new DAO();
+
+        $sql = "INSERT INTO film (titre, annee, realisateur, duree, synopsis, indice)
+                VALUES (:titre, :annee, :realisateur, :duree, :synopsis, :indice)";
+
+                $titre_film = filter_var($array['titre_film'],FILTER_SANITIZE_STRING);
+                $annee_film = filter_var($array['annee_film'],FILTER_SANITIZE_STRING);
+                $realisateur_film = filter_var($array['realisateur_film'],FILTER_SANITIZE_STRING);
+                $duree_film = filter_var($array['duree_film'],FILTER_SANITIZE_STRING);
+                $synopsis_film = filter_var($array['synopsis_film'],FILTER_SANITIZE_STRING);
+                $indice_film = filter_var($array['indice_film'],FILTER_SANITIZE_STRING);
+
+                $ajout = $dao->executerRequete($sql, [":titre" =>$titre_film, ":annee"=> $annee_film, ":realisateur"=> $realisateur_film, ":duree"=>$duree_film, ":synopsis"=>$synopsis_film, ":indice"=>$indice_film]);
+
+                require "views/film/addFilm.php";
+    }   
 }

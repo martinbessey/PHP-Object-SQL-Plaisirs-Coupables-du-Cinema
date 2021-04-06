@@ -22,7 +22,6 @@ ob_start();
          <input type="text" id="sexe_real" name="sexe_real" placeholder="Sexe du réalisateur..." required>
       </div>
       <div>
-         <input type="hidden" value="<?= $_SESSION["token"] ?>" name="token">
          <input type="submit" placeholder="Ajouter" value="Ajouter">
       </div>
    </form>

@@ -35,6 +35,7 @@ ob_start();
             </tbody>
         </table>
     </main>
+<small>Vous souhaitez ajouter un nouveau film?<a href="index.php?action=ajouterFilmForm"><strong>Cliquez ici</strong></a></small>
 
 <?php
 

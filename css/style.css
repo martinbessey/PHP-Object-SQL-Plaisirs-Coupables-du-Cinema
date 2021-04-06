@@ -86,6 +86,8 @@ nav a:hover{
     font-size: 36px;
     font-weight: 700;
     text-transform: uppercase;
+    left: 0;
+    transition: all 0.3s ease-out;
 }
 
 #banner img{
@@ -93,7 +95,6 @@ nav a:hover{
     transform: translateY(140px);
     width:100vw;
     mix-blend-mode: darken;
-    z-index: 2;
 }
 
 #banner span,
@@ -102,7 +103,6 @@ nav a:hover{
 #banner i
 {
     position: absolute;
-    z-index: 10;
 }
 
 #banner span{
@@ -141,6 +141,10 @@ nav a:hover{
     transform:  translate(-10px, 50px)!important;
 }
 
+.slide-image2{
+    transform:  translate(-0px, 50px)!important;
+
+}
 hr
 {
     width: 80vw;

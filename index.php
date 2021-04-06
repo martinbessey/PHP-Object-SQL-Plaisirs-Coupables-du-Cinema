@@ -29,6 +29,8 @@ switch($_GET['action']){
         case "detailFilm" : $ctrlFilm->findOneById($id);break;
         case "detailActeur" : $ctrlAct->findOneById($id);break;
         case "detailGenre" : $ctrlGenre->findOneById($id);break;
+        case "ajouterFilm" : $ctrlFilm->addFilm($_POST);break;
+        case "ajouterFilmForm" : $ctrlFilm->addFilmForm();break;
         case "ajouterRealForm": $ctrlReal->addRealForm();break;
         case "ajouterReal": $ctrlReal->addReal($_POST);break; 
         case "ajouterActeurForm" : $ctrlAct->addActorForm();break;
