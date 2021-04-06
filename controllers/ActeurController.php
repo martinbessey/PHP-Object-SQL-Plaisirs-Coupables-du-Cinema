@@ -25,7 +25,7 @@ class ActeurController
         $id = $id;
         $dao = new DAO;
 
-        $sql = "SELECT idacteur, CONCAT(prenom,' ',nom) AS identite, img , naissance, bio, nom, prenom
+        $sql = "SELECT idacteur, CONCAT(prenom,' ',nom) AS identite, img , naissance, bio, nom, prenom, sexe
         FROM acteur 
         WHERE idacteur= :id";
         $acteur = $dao->executerRequete($sql, [":id" => $id]);
@@ -84,9 +84,27 @@ class ActeurController
         require "views/acteur/editActorForm.php";
     }
 
-    public function editActeur($id, $array){
+    public function editActor($id, $array){
+        
+        $nom = filter_var($array['nom_act'], FILTER_SANITIZE_STRING);
+        $prenom = filter_var($array['prenom_act'], FILTER_SANITIZE_STRING);
 
-        header("Location: index.php?action=detailActor");
+
+        $dao = new DAO();
+
+        $sql= "UPDATE acteur
+               SET nom_acteur= :nom_act,
+               SET prenom_acteur= : prenom_act,
+               WHERE id_acteur = : id";
+
+        $dao->executerRequete($sql, [
+           ":id" =>  $id,
+           ":nom" =>  $nom,
+           ":prenom" => $prenom
+        ]);
+
+        header("Location: index.php?action=detailActeur");
+
+
     }
-
 }

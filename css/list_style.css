@@ -42,7 +42,6 @@ div p{
 }
 
 main{
-    position: relative;
     width:100vw;  
     justify-content: center; 
     background-position:top;
@@ -50,13 +49,11 @@ main{
 }
 
 .background{
-    position: absolute;
     width: 100vh;
     transform: translateX(-50%);
 }
 
 table{
-    position: absolute;
     background-color:rgba(255,255,255,0.9);
     border: 2px solid #959595;
     width: 55vw;
@@ -90,6 +87,10 @@ tbody a{
 
 tbody a:hover{
     color: rgb(0, 0, 0);
+}
+
+small{
+    bottom:0
 }
 
 

@@ -16,7 +16,7 @@ section{
     text-align: center;
     margin:0;
     width:100vw;
-    height: 100vh;
+    height: 150vh;
 }
 
 section h2{
@@ -29,9 +29,14 @@ section h2{
 form{
     transform: translateX(130%);
     width:50vw;
-    flex-direction: column;
-
+    height:100vh;
+    flex-flow:column;
 }
+
+form div{
+    padding-top:5%;
+}
+
 input[type="text"]{
     width:60%;
     height:10vh;
@@ -60,4 +65,33 @@ input[type="submit"]:hover {
 
 input:focus{
     outline: none;
+
+}
+
+.edit:before{
+    position: absolute;
+    left:-35%;
+    font-weight:900;
+}
+
+#editnom:before{
+    content:"Nom:";
+}
+
+#editprenom:before{
+    content:"Prénom:";
+}
+
+#editsexe:before{
+    content:"Sexe:";
+}
+#editbio:before{
+    content:"Bio:";
+}
+
+#bio_act,
+#bio_real{
+    padding: 1px 1px;
+    height:50vh;
+    border-radius:15px;
 }

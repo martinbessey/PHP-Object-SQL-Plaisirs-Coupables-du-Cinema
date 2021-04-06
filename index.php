@@ -36,7 +36,7 @@ switch($_GET['action']){
         case "editRealForm": $ctrlReal->editRealForm($id);break;
         case "editReal" : $ctrlReal->editReal($id, $_POST);break;  
         case "editActeurForm": $ctrlAct->editActorForm($id);break;
-        case "editActeur" : $ctrlAct->editActeur($id, $_POST);break;
+        case "editActeur" : $ctrlAct->editActor($id, $_POST);break;
 
 }
 

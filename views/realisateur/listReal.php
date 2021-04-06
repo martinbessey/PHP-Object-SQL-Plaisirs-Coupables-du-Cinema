@@ -31,7 +31,7 @@ ob_start();
         </tbody>
     </table>
 </main>
-<span>Vous souhaitez ajouter un nouveau réalisateur?<a href="index.php?action=ajouterRealForm"><strong>Cliquez ici</strong></a></span>
+<small>Vous souhaitez ajouter un nouveau réalisateur?<a href="index.php?action=ajouterRealForm"><strong>Cliquez ici</strong></a></small>
 <?php
 
 $realisateurs->closeCursor();
