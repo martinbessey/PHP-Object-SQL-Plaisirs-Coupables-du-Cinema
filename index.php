@@ -21,6 +21,8 @@ if(isset($_GET['action'])){
 
 switch($_GET['action']){
     
+        case "filmAcceuil1" : $ctrlFilm->findOnHomepage1($id);break;
+        case "filmAcceuil2" : $ctrlFilm->findOnHomepage2($id);break;
         case "listFilms" : $ctrlFilm->findAll();break;
         case "listActeurs" : $ctrlAct->findAll();break;
         case "listReal" : $ctrlReal->findAll();break;
