@@ -1,7 +1,7 @@
 <?php
 
 ob_start();
-$filmDefilmGenres = $filmDeGenres->fetch();
+$filmDeGenre = $filmDeGenres->fetch();
 
 ?>
 
@@ -12,7 +12,7 @@ $filmDefilmGenres = $filmDeGenres->fetch();
 </head>
 <body>
     <div class="flex">
-        <h2><?= $filmDefilmGenres['nom']; ?></h2>
+        <h2><?= $filmDeGenre['nom']; ?></h2>
     </div>
     <main>
         <table>
@@ -25,10 +25,10 @@ $filmDefilmGenres = $filmDeGenres->fetch();
             </thead>
             <tbody>
                 <?php
-                while ($filmDeGenre = $filmDeGenres->fetch()) {
+                while ($filmDeGenre = $filmDeGenres->fetch(PDO::FETCH_ASSOC)) {
                     echo "<tr><td><a href='index.php?action=detailFilm&id=" . $filmDeGenre ['idfilm'] . "'>" . $filmDeGenre['titre'] . "</a></td>";
                     echo "<td>" . $filmDeGenre['annee'] . "</td>";
-                    echo "<td>" . $filmDeGenre['indice'] . "</td></tr>";
+                    echo "<td>".$filmDeGenre['indice']. "</td></tr>";
                 }
                 ?>
             </tbody>

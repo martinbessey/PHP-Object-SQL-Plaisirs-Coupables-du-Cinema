@@ -13,17 +13,25 @@ ob_start();
 <section class="flex">
    <h2> Ajouter un acteur</h2>
    <form class="flex" action="./index.php?action=ajouterActeur" method="post">
-      <div>
-         <input type="text" id="nom_act" name="nom_act" placeholder="Nom de l'acteur..." required>
+   <div>
+         <input type="text" id="titre_act" name="titre_act" placeholder="Nom de l'acteur..." required>
       </div>
       <div> 
-         <input type="text" id="prenom_act" name="prenom_act" placeholder="Prénom de l'acteur..." required>
+         <input type="date" id="naissance_act" name="naissance__act" placeholder="Année de sortie..." required>
       </div>
       <div>
-         <input type="text" id="sexe_act" name="sexe_act" placeholder="Sexe de l'acteur..." required>
+         <input type="number" id="duree_act" name="duree_act" min="0" max="500" placeholder="Durée..." required>
       </div>
       <div>
-         <input type="hidden" value="<?= $_SESSION["token"] ?>" name="token">
+         <textarea id="synopsis_act" name="synopsis_act" placeholder="Sinopsys..." required></textarea>
+      </div>
+      <div>
+         <input type="number" id="indice_act" name="indice_act" min="0" max="10" placeholder="Indice de culpabilité.." required>
+      </div>
+      <div>
+         <input type="file" id="img_act" name="img_act" placeholder="Image de l'acteur..." required>
+      </div>
+      <div>
          <input type="submit" placeholder="Ajouter" value="Ajouter">
       </div>
    </form>

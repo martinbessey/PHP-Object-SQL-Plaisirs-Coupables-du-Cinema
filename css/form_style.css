@@ -1,97 +1,107 @@
-*{
-   box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
 img {
-    width:100%;
+  width: 100%;
 }
 
 .flex {
-    display: flex;
+  display: flex;
 }
 
-
-section{
-    flex-direction: column;
-    text-align: center;
-    margin:0;
-    width:100vw;
-    height: 150vh;
+section {
+  flex-direction: column;
+  text-align: center;
+  margin: 0;
+  width: 100vw;
+  height: 200vh;
 }
 
-section h2{
-    color:fuchsia;
-    font-size: 24px;
-    font-weight:900;
-    text-transform: uppercase;
+section h2 {
+  color: fuchsia;
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
-form{
-    transform: translateX(130%);
-    width:50vw;
-    height:100vh;
-    flex-flow:column;
+form {
+  width: 100vw;
+  flex-direction:column;
 }
 
-form div{
-    padding-top:5%;
+form div {
+  padding-top: 2%;
+  ;
 }
 
-input[type="text"]{
-    width:60%;
-    height:10vh;
-    font-size: 24px;
-    margin:3%;
-    color:rgb(14, 14, 14);
+input[type="text"],
+input[type="file"],
+input[type="date"],
+input[type="number"]{
+  width: 30%;
+  font-size: 24px;
+  margin: 3%;
+  border-radius: 7.5vw;
+  color: rgb(14, 14, 14);
 }
 
-input[type="text"]:hover {
-    border: solid 4px fuchsia;
+textarea {
+  width: 60%;
+  height: 25vh;
+  border-radius: 2vw;
+  color: rgb(14, 14, 14);
 }
 
-input[type="submit"]{
-    background-color:rgb(14, 14, 14);
-    color: #fafafa;
-    font-size: 25px;
-    border-radius: 15px;
-    margin-top: 3%;
-    box-shadow: 10px 6px 6px rgb(197, 197, 197);
+input[type="text"]:hover,
+input[type="file"]:hover,
+input[type="date"]:hover,
+input[type="number"]:hover {
+  border: solid 4px fuchsia;
+}
+
+input[type="submit"] {
+  background-color: rgb(14, 14, 14);
+  color: #fafafa;
+  font-size: 25px;
+  border-radius: 15px;
+  margin-top: 3%;
+  box-shadow: 10px 6px 6px rgb(197, 197, 197);
 }
 
 input[type="submit"]:hover {
-    background-color: fuchsia;
-    color: white;;
-  }
-
-input:focus{
-    outline: none;
-
+  background-color: fuchsia;
+  color: white;
 }
 
-.edit:before{
-    position: absolute;
-    left:-35%;
-    font-weight:900;
+input:focus {
+  outline: none;
 }
 
-#editnom:before{
-    content:"Nom:";
+.edit:before {
+  position: absolute;
+  left: -35%;
+  font-weight: 900;
 }
 
-#editprenom:before{
-    content:"Prénom:";
+#editnom:before {
+  content: "Nom:";
 }
 
-#editsexe:before{
-    content:"Sexe:";
+#editprenom:before {
+  content: "Prénom:";
 }
-#editbio:before{
-    content:"Bio:";
+
+#editsexe:before {
+  content: "Sexe:";
+}
+#editbio:before {
+  content: "Bio:";
 }
 
 #bio_act,
-#bio_real{
-    padding: 1px 1px;
-    height:50vh;
-    border-radius:15px;
+#bio_real {
+  padding: 1px 1px;
+  height: 50vh;
+  border-radius: 15px;
 }

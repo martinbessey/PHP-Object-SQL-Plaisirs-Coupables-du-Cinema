@@ -26,7 +26,7 @@ class GenreController{
 
         $dao = new DAO;
 
-        $sql="SELECT f.titre, f.annee, f.indice, f.idfilm, g.nom
+        $sql="SELECT DISTINCT (g.idgenre), f.titre, f.annee, f.indice, f.idfilm, g.nom
                FROM classer c INNER JOIN film f
                ON c.idfilm = f.idfilm
                INNER JOIN genre g
