@@ -29,7 +29,7 @@ ob_start();
                     echo "<tr><td><a href='index.php?action=detailFilm&id=" . $film['idfilm'] . "'>" . $film['titre'] . "</a></td>";
                     echo "<td>" . $film['annee'] . "</td>";
                     echo "<td><a href='index.php?action=detailRealisateur&id=" . $film['idreal'] . "'>" . $film['nom'] . "</a></td>";
-                    echo "<td>" . $film['indice'] . "</td></tr>";
+                    echo "<td>" . $film['indice'] . "</td>";
                 }
                 ?>
             </tbody>

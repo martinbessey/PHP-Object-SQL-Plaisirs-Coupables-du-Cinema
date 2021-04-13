@@ -16,7 +16,8 @@ img{
     flex-wrap: wrap;
 }
 
-div{
+
+.title{
     flex-direction: column;
     text-align: center;
     margin-bottom: 5%;
@@ -24,14 +25,14 @@ div{
     height: 10vh;
 }
 
-div h2{
+.title h2{
     color:fuchsia;
     font-size: 24px;
     font-weight:900;
     text-transform: uppercase;
 }
 
-div p{
+.title p{
     margin:0;
     font-size: 36px;
 }
@@ -71,11 +72,33 @@ figure{
     width:15vw;
     height: 20vh;
     margin-bottom: 30vh;
-    transform: translateX(15%);
+    transform: translateX(30%);
 }
+
 
 ul a{
     text-decoration:none;
     font-weight: 900;
     color:fuchsia;
 }
+.delete{
+    background-color: rgb(255, 0, 0);
+    color: #fafafa;
+    font-size: 16px;
+    padding:2%;
+    border-radius: 7px;
+    margin-top: 3%;
+    box-shadow: 10px 6px 6px rgb(197, 197, 197);
+}
+
+.edit{
+    background-color:rgb(0, 255, 85);
+    color: #fafafa;
+    font-size: 16px;
+    padding:2%;
+    border-radius: 7px;
+    margin-top: 3%;
+    box-shadow: 10px 6px 6px rgb(197, 197, 197);
+}
+
+

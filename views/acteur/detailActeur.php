@@ -10,7 +10,7 @@ $detailAct = $acteur->fetch();
     <link rel="stylesheet" href="/css//detail_style.css">
     <title>"Plaisirs coupables du cinéma"</title>
 </head>
-<div class="flex">
+<div class=" title flex">
     <h2>Gros plan sur <?= $detailAct['identite'] ?></h2>
 </div>
 <main class="flex wrap">
@@ -35,8 +35,10 @@ $detailAct = $acteur->fetch();
             }
             ?>
         </ul>
+        <div>
+        <a  href="index.php?action=editActeurForm&id=<?= $detailAct['idacteur'] ?>" class="edit">Modifier</a>
+        </div>
     </article>
-    <span><a href="index.php?action=editActeurForm"><strong>Modifier </strong></a>cet acteur</span>
     </body>
 
     </html>

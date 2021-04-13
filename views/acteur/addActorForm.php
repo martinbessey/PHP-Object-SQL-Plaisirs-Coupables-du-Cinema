@@ -11,27 +11,34 @@ ob_start();
 </head>
 
 <section class="flex">
-   <h2> Ajouter un acteur</h2>
-   <form class="flex" action="./index.php?action=ajouterActeur" method="post">
-   <div>
-         <input type="text" id="titre_act" name="titre_act" placeholder="Nom de l'acteur..." required>
+   <h2>Ajouter un acteur</h2>
+   <form class="flex column" action="./index.php?action=ajouterActeur" method="post">
+      <div class="flex column">
+         <label for="nom_act"><strong>Nom de l'acteur:</strong></label>
+         <input type="text" id="nom_act" name="nom_act" placeholder="De Niro..." required>
+      </div>
+      <div class="flex column">
+         <label for="prenom_act">Prenom de l'acteur</label>
+         <input type="text" id="prenom_act" name="prenom_act" placeholder="Robert..." required>
+      </div>
+      <div class="flex column">
+         <label for="nom_act">Date de naissance</label>
+         <input type="date" id="naissance_real" name="naissance__real" placeholder="Année de sortie..." required>
+      </div>
+      <div class="flex column">
+         <p>Sexe de l'acteur:</p>
+         <input type="checkbox" name="M">
+         <label for="M">M</label>
+        <input type="checkbox" name="F">
+         <label for="F">F</label>
+      </div>
+      <div class="flex column">
+         <textarea id="bio_real" name="bio_real" placeholder="Biographie..." required></textarea>
+      </div>
+      <div class="flex column">
+         <input type="file" id="img_real" name="img_real" placeholder="Image du realisateur..." required>
       </div>
       <div> 
-         <input type="date" id="naissance_act" name="naissance__act" placeholder="Année de sortie..." required>
-      </div>
-      <div>
-         <input type="number" id="duree_act" name="duree_act" min="0" max="500" placeholder="Durée..." required>
-      </div>
-      <div>
-         <textarea id="synopsis_act" name="synopsis_act" placeholder="Sinopsys..." required></textarea>
-      </div>
-      <div>
-         <input type="number" id="indice_act" name="indice_act" min="0" max="10" placeholder="Indice de culpabilité.." required>
-      </div>
-      <div>
-         <input type="file" id="img_act" name="img_act" placeholder="Image de l'acteur..." required>
-      </div>
-      <div>
          <input type="submit" placeholder="Ajouter" value="Ajouter">
       </div>
    </form>

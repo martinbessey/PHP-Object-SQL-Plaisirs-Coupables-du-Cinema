@@ -41,6 +41,9 @@ switch($_GET['action']){
         case "editReal" : $ctrlReal->editReal($id, $_POST);break;  
         case "editActeurForm": $ctrlAct->editActorForm($id);break;
         case "editActeur" : $ctrlAct->editActor($id, $_POST);break;
+        case "editFilmForm" : $ctrlFilm->editFilmForm($id);break;
+        case "editFilm" : $ctrlFilm->editFilm($id, $_POST);break;
+        case "supprimerFilm" : $ctrlFilm->deleteFilmById($id);break;
 
 }
 

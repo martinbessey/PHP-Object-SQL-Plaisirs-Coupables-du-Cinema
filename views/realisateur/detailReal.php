@@ -12,7 +12,7 @@ $detailReal = $realisateur->fetch();
 <head>
     <link rel="stylesheet" href="/css//detail_style.css">
 </head>
-<div class="flex">
+<div class="title flex">
     <h2>Gros plan sur <?= $detailReal['identite'] ?></h2>
 </div>
 <main class="flex wrap">
@@ -35,8 +35,11 @@ $detailReal = $realisateur->fetch();
             }
             ?>
         </ul>
+        <div>
+        <a  href="index.php?action=editRealForm&id=<?= $detailReal['idreal'] ?>" class="edit">Modifier</a>
+        </div>
     </article>
-    <span><a href="index.php?action=editRealForm&id="<?=$detailReal['idreal']?>><strong>Modifier </strong></a>ce réalisateur</span>
+</main> 
 
 
     <?php

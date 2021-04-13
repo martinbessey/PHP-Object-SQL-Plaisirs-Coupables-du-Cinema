@@ -83,6 +83,33 @@ class FilmController{
         }       
         require "views/film/addFilm.php";
     }   
+
+    public function editFilmForm($id){
+
+        $dao = new DAO();
+
+        $sql1 = ('SELECT idfilm, titre, annee, duree, synopsis, indice, idreal, img
+                FROM film f
+                WHERE idfilm= :id');
+
+        $edit1 = $dao->executerRequete($sql1, [":id" => $id]) ;      
+
+        
+        $sql2 = ('SELECT idgenre, idfilm FROM classer WHERE idfilm= :id');
+
+        $edit2 = $dao->executerRequete($sql2, [":id" => $id]) ;  
+        
+        $sql3 = ("SELECT nom, idgenre FROM genre");
+
+        $edit3  = $dao->executerRequete($sql3);
+
+        $sql4 = ("SELECT DISTINCT (CONCAT(prenom,' ',nom)) AS 'RealNom', idreal FROM realisateur");
+
+        $edit4  = $dao->executerRequete($sql4);
+
+        require "views/film/editFilmForm.php";
+    }
+
     public function editFilm($id, $array){
 
         $titre_film = filter_var ($array['titre_film'], FILTER_SANITIZE_STRING);
@@ -92,6 +119,7 @@ class FilmController{
         $synopsis_film = filter_var ($array['synopsis_film'], FILTER_SANITIZE_STRING);
         $realisateur_film = filter_var ($array['real_film'], FILTER_SANITIZE_STRING);
         $genre_film = filter_var_array($array['genre_film'], FILTER_SANITIZE_STRING);
+        $img_film = filter_var($array['img_film'], FILTER_SANITIZE_STRING);
 
 
         $dao = new DAO();
@@ -100,9 +128,10 @@ class FilmController{
                 SET titre = :titre_film,
                 annee= :annee_sortie,
                 duree = :duree_film,
-                note = :note_film,
+                indice = :indice_film,
                 synopsis= :synopsis,
                 idreal= :realisateur
+                img= :img_film
                 WHERE idfilm = :id";
 
         $dao->executerRequete($sql,[
@@ -112,16 +141,17 @@ class FilmController{
             ":duree_film" => $duree_film,
             ":indice_film" => $indice_film,
             ":synopsis"=>  $synopsis_film,
-            ":realisateur" =>$realisateur_film
+            ":realisateur" =>$realisateur_film,
+            ":img_film" =>$img_film
             ]);
 
-        $sql2 = "DELETE FROM style_film
-        WHERE id_film = :id";
+        $sql2 = "DELETE FROM classer
+        WHERE idfilm = :id";
         $delete = $dao->executerRequete($sql2, [":id" => $id]);
 
         //On supprime tous les genres du films en questions pour les remettre ensuite
 
-        $sql3 = "INSERT INTO style_film(id_genre, id_film)
+        $sql3 = "INSERT INTO classer(idgenre, idfilm)
         VALUES (:idGenre, :idFilm)";
 
         foreach ($genre_film as $genreActuel){
@@ -148,7 +178,7 @@ class FilmController{
         $supp = $dao->executerRequete($sql2, [":id" => $id]);
         $supp = $dao->executerRequete($sql3, [":id" => $id]);
 
-        require "views/film/suppressionFilm.php";
+        require "views/film/supprimerFilm.php";
     }
 
     public function findOnHomepage1($id){

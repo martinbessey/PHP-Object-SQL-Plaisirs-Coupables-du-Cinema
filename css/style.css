@@ -132,6 +132,16 @@ nav a:hover{
     color: fuchsia;   
 }
 
+.delete{
+    background-color: rgb(14, 14, 14);
+    color: #fafafa;
+    font-size: 18px;
+    border-radius: 7px;
+    margin-top: 3%;
+    box-shadow: 10px 6px 6px rgb(197, 197, 197);
+}
+
+
 #banner i{
     color:white;
 }

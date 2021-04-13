@@ -11,7 +11,7 @@ $detailFilm = $film->fetch();
     <link rel="stylesheet" href="/css//detail_style.css">
     <title>"Plaisirs coupables du cinéma"</title>
 </head>
-<div class="flex">
+<div class="title flex">
     <h2>Gros plan sur <?= $detailFilm['titre'] ?></h2>
 </div>
 <main class="flex wrap" style="background-image:url('../../<?= $detailFilm['background'] ?>');background-size:cover;">
@@ -42,6 +42,10 @@ $detailFilm = $film->fetch();
             }
             ?>
         </ul>
+        <div>
+        <a  href="index.php?action=editFilmForm&id=<?= $detailFilm['idfilm'] ?>" class="edit">Modifier</a>
+        <a  href="index.php?action=supprimerFilm&id=<?= $detailFilm['idfilm'] ?>" class="delete">Supprimer</a>
+        </div>
     </article>
 </main>
 
