@@ -3,3 +3,5 @@ We all have our guilty pleasures, those movies that we love, but are a little as
 
 FR
 Nous avons tous nos plaisirs coupables, ces films qu'on adore, mais dont on a un peu honte, ces films pas vraiment bons, mais qu'on ne peut pas s'empêcher d'aimer.
+
+Ce projet à été réalisé dans le cadre de mon titre professionnel Développeur Web.
