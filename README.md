@@ -1,6 +1,6 @@
 
 
-![Image of Yaktocat]()
+<img src="img/homepage.jpg">
 
 
 <h2>EN :</h2> 
