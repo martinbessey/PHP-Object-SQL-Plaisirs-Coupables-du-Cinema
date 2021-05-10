@@ -5,7 +5,7 @@
 
 <h2>EN :</h2> 
 <br>
-<q><i>We all have our guilty pleasures, those movies that we love, but are a little ashamed of, those movies that aren't really good, but that we can't help but love.</i></q>
+<q><i>We all have our guilty pleasures, those movies that we love, but are a little ashamed of, those movies that aren't really good, but that we can't stop loving.</i></q>
 
 <br><ul><<h4>Basic Function:</h4>
   <li>list the information about movies, their director and their actors.</li>
