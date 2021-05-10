@@ -1,6 +1,6 @@
 
 
-<img src="img/homepage.jpg">
+<img src="IMG/homepage.png">
 
 
 <h2>EN :</h2> 
